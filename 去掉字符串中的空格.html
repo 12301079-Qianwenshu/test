@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var text = '   这是一个前后有空格 中间有空格       末尾有空格的句子   '
+            console.log(text)
+            function deleteSpace(text) {
+                var newText = text.trim()
+                console.log(newText)
+                let reg = /\s/g
+                var result = newText.replace(reg, '')
+                console.log(result)
+            }
+            deleteSpace(text)
+
+            var text2 = '去除字符串$中最后$一个指定字$符'
+            console.log(text2)
+            // 仅能作用于单一字符串
+            function deleteTarget(value, target) {
+                let arr = value.split('')
+                let index = arr.lastIndexOf(target)
+                if (index > -1) {
+                    arr[index] = ''
+                    let result = arr.join('')
+                    console.log(result)
+                }
+            }
+            deleteTarget(text2, '$')
+
+            var text3 = '去除字符串hf中最后hf一个指定字hf符'
+            console.log(text3)
+            function deleteTarget2(value, target) {
+                let newValue = value.split('').reverse().join('')
+                let reg = new RegExp(target.split('').reverse().join(''))
+                let result = newValue.replace(reg, '')
+                console.log(result.split('').reverse().join(''))
+            }
+            deleteTarget2(text3, 'hf')
+
+            // 下划线转驼峰
+            let text4 = 'class_name_wendy_hhh'
+            console.log(text4)
+            function underlineToCam(value) {
+                let arr = value.split('_')
+                let result = ''
+                for (let i = 0; i < arr.length; i++) {
+                    result = result + arr[i].substr(0, 1).toUpperCase() + arr[i].substr(1)
+                }
+                console.log(result)
+            }
+            underlineToCam(text4)
+
+            // 字符串大小写切换
+            let text5 = 'AsAs33322A2aa'
+            console.log(text5)
+            function changeCase(text) {
+                let reg = /([A-Z]+)|([a-z]+)/g
+                let result = text.replace(reg, function (m, s1, s2) {
+                    // 参数中m代表匹配到的内容，后续则为分组
+                    // console.log(m) 
+                    // console.log(s1)
+                    // console.log(s2)
+                    let s1Val = s1 ? s1.toLowerCase() : ''
+                    let s2Val = s2 ? s2.toUpperCase() : ''
+                    return s1Val + s2Val
+                })
+
+                console.log(result)
+            }
+            changeCase(text5)
+
+            // 去除制表符和换行符的方法
+            // \f  匹配换页字符。
+            // \n  匹配换行字符。
+            // \r  匹配回车符字符。
+            // \t  匹配制表字符。
+            // \v  匹配垂直制表符。
+            let text6 = '这是换行符\n这是水平制表符\t这是垂直制表符\v'
+            console.log(text6)
+            function deleteZBHH(text) {
+                let reg = /\n|\t|\v/g
+                let result = text.replace(reg, '')
+                console.log(result)
+            }
+            deleteZBHH(text6)
+
+            //  统计某一字符或字符串在另一个字符串中出现的次数
+            let text7 = 'abcabcabcabca'
+            console.log(text7)
+            function countShow(text, target) {
+                let count = 0
+                let reg = new RegExp(`${target}{1}`, 'g')
+                let result = text.replace(reg, function (m) {
+                    if (m) {
+                        count++
+                    }
+                })
+                console.log(count)
+            }
+            countShow(text7, 'c')
+
+            // 字符串加密解密，浏览器自带btoa、atob
+            let text8 = '这是一个待加密字符 string'
+            console.log(text8)
+            function encode(text) {
+                let result = window.btoa(window.encodeURIComponent(text))
+                console.log(result)
+                let result2 = window.decodeURIComponent(window.atob(result))
+                console.log(result2)
+            }
+            encode(text8)
+
+            // 凯撒密码
+            const encodeCaesar = ({ str = "", padding = 3 }) =>
+                !str
+                    ? str
+                    : str
+                        .split("")
+                        .map((s) => String.fromCharCode(s.charCodeAt() + padding))
+                        .join("");
+
+            const decodeCaesar = ({ str = "", padding = 3 }) =>
+                !str
+                    ? str
+                    : str
+                        .split("")
+                        .map((s) => String.fromCharCode(s.charCodeAt() - padding))
+                        .join("");
+
+            console.log(encodeCaesar({ str: "hello world我" }));
+            console.log(decodeCaesar({ str: "khoor#zruog戔" }));
+
+            // 判断数据类型
+            function dataType(text) {
+                let typeStr = Object.prototype.toString.call(text)
+                let type = typeStr.substring(8, typeStr.length - 1)
+                console.log(typeStr)
+                console.log(type)
+            }
+            dataType('123')
+            dataType(123)
+            dataType(null)
+            dataType(undefined)
+            dataType(true)
+            dataType({ a: '1', b: '2' })
+            dataType([1, 2])
+            dataType(() => 1)
+        }
+    </script>
+</body>
+
+</html>

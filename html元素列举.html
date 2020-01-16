@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>块级元素</div>
+        <div>div table p h1 h2 h3 h4 h5 h6 ul li table tbody thead tr th section ol hr header footer body meta title
+            article aside nav menu </div>
+        <div>行内元素</div>
+        <div>span img label a input td button strong i em br video canvas radio select</div>
+        <button>1</button>
+        <button>2</button>
+        <div>
+            全局属性：用于任何HTML5元素的属性
+            <ul>
+                <li>accesskey:设置快捷键</li>
+                <li>class:为元素设置类标识</li>
+                <li>contenteditable:指定元素内容是否可编辑</li>
+                <li>contextmenu:自定义鼠标右键弹出上下文菜单内容（仅firefox支持）</li>
+                <li>data-*:为元素增加自定义属性</li>
+                <li>dir：设置元素文本方向（默认ltr；rtl）</li>
+                <li>draggable:设置元素是否可拖拽</li>
+                <li>dropzone:设置元素拖放类型（copy|move|link,H5新属性，主流均不支持）</li>
+                <li>hidden:规定元素仍未或不在相关</li>
+                <li>id:元素id，文档内唯一</li>
+                <li>spellcheck:是否启动拼写和语法检查</li>
+                <li>style:行内css样式</li>
+                <li>tabindex:设置元素可以获得焦点，通过tab导航</li>
+                <li>title:规定元素有关的额外信息</li>
+                <li>translate:元素和子孙节点内容是否需要本地化（均不支持）</li>
+            </ul>
+        </div>
+        <div>
+            在页面上隐藏元素的方法：
+            <div>display: none 空间位置都不在</div>
+            <div>visibility: hidden 可见性设置，元素占位空间还在 </div>
+            <div>height: 0; overflow: hidden</div>
+            <div>opacity: 0; 透明度设置</div>
+            <div>position定位设置，定位到页面外，正负边距设置等</div>
+            <div>transform: scale(0)/translateX(+-100%)/translateY(+-100%)/rotateX(90deg);</div>
+            <div>z-index: -9999999999999</div>
+        </div>
+        <div> HTML5的本地存储</div>
+        <div>localStorage:
+            将数据保存在客户端本地的硬件设备(通常指硬盘，也可以是其他硬件设备)中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用，除非主动删除数据，否则数据永远不会消失</div>
+        <div>
+            window.localStorage.getItem('key') <br />
+            window.localStorage.setItem('key') <br />
+            window.localStorage.removeItem('key') <br />
+            window.localStorage.clear() <br />
+        </div>
+        <div>
+            sessionStorage：将数据保存在session对象中。所谓session，是指用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间。session对象可以用来保存在这段时间内所要求保存的任何数据。是在同源的窗口中始终存在的数据，但是sessionStorage在关闭了浏览器窗口后就会被销毁
+        </div>
+        <div>
+            window.sessionStorage.getItem('key') <br />
+            window.sessionStorage.setItem('key') <br />
+            window.sessionStorage.removeItem('key') <br />
+            window.sessionStorage.clear() <br />
+        </div>
+        <div>区别：sessionStorage为临时保存，而localStorage为永久保存</div>
+        <div>
+            <a href="https://blog.csdn.net/zhouziyu2011/article/details/58588546" target="_blank">html5离线缓存</a>
+        </div>
+        <div>CSS选择器</div>
+        <div>
+            .
+            #
+            *
+            div
+            div > div 子 选择父元素为 <div> 元素的所有 <div> 元素
+            div div 后代 选择 <div> 元素内部的所有 <div> 元素
+            div + div 兄弟 选择紧接在 <div> 元素之后的所有 <div> 元素 平级
+            .class1.class2 同时
+            :after :before
+            :last-child :first-child :nth-child(1)
+            tr:nth-child(odd) 奇数行 tr:nth-child(even) 偶数行
+            tr:nth-child(2n+1) 奇数行 tr:nth-child(2n) 偶数行
+            :hover
+            :focus
+        </div>
+        <div>可继承的css属性</div>
+        <div>
+            字体系列(仅列举常用)：font-size font-weight font-family 
+            文本系列：text-indent text-align line-height color
+            元素可见性：visibility
+            <a href="https://www.jianshu.com/p/fbfc6c751e34" target="_blank">css属性继承</a>
+        </div>
+        <a href="http://">hhh</a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">_blank</a>
+        <a href="mailto:">hhh</a>
+        <a href="tel:+">hhh</a>
+        <div>CSS伪类伪元素:伪类和伪元素是用来修饰不在文档树中的部分,比如，一句话中的第一个字母，或者是列表中的第一个元素,伪类与伪元素的区别在于：有没有创建一个文档树之外的元素,css3规范中要求使用双冒号（::）表示伪元素</div>
+        <a href="https://www.cnblogs.com/66-88/articles/6681658.html" target="_blank">伪类伪元素</a>
+        <label for="inputtest">这是label标签</label>
+        <input type="text" id="inputtest" />
+
+        <input type="checkbox" id="a" value="haha" name="cn">
+        <label for="a" >haha </label>
+        <input type="checkbox" id="b" value="hehe" name="cm">
+        <label for="b" >hehe </label>
+        <iframe src="https://www.w3school.com.cn/html/html_iframe.asp"></iframe>
+    </div>
+</body>
+
+</html>

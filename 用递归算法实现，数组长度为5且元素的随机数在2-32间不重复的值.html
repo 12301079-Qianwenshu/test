@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        window.onload = function () {
+            var arr = new Array(5)
+            function randomNum() {
+                var num = Math.floor(Math.random() * (23 + 1 - 2) + 2)
+                return num
+            }
+            var i = 0
+            var num = randomNum()
+            function randomArr(arr, num) {
+                if (arr.indexOf(num) > -1) {
+                    num = randomNum()
+                } else {
+                    arr[i] = num
+                    i++
+                }
+
+                if (i < arr.length) {
+                    randomArr(arr, num)
+                } else {
+                    return
+                }
+            }
+
+            randomArr(arr, num)
+
+            console.log(arr)
+
+        }
+    </script>
+</body>
+
+</html>
