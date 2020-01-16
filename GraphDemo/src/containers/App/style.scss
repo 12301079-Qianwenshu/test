@@ -1,0 +1,9 @@
+.app {
+    color: #222;
+
+    .header {}
+
+    .children {
+        min-height: calc(100vh - 132px);
+    }
+}
