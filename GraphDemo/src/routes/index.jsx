@@ -7,23 +7,20 @@ const routes = () => (
   <Router>
     <Switch>
       <Route exact path='/' render={() => (
-        <Redirect to='/platform/home' />
-      )} />
-      <Route exact path='/platform' render={() => (
-        <Redirect to='/platform/home' />
+        <Redirect to='/platform' />
       )} />
       <Route
-        path="/platform/home"
+        path="/platform"
         component={props => (
           <App {...props}>
             <Switch>
               <Route
-                path='/platform/home'
+                path='/platform'
                 exact={true}
-                render={() => <Redirect to='/platform/home/index' />}
+                render={() => <Redirect to='/platform/index' />}
               />
               {/* 首页 */}
-              <Route path='/platform/home/index' component={Index} />
+              <Route path='/platform/index' component={Index} />
             </Switch>
           </App>
         )}

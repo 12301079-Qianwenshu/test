@@ -6,9 +6,9 @@ class App extends Component {
     render() {
         return (
             <div className={style.app}>
-                <Header className={style.header} />
+                {/* <Header className={style.header} /> */}
                 <div className={style.children}>{this.props.children}</div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         );
     }
