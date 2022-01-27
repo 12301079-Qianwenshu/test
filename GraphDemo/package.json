@@ -22,7 +22,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "three": "^0.108.0"
+    "three": "^0.137.0"
   },
   "browserslist": [
     "defaults",
